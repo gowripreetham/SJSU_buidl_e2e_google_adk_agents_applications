@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sports store agent</title>
+<style>
+  :root { --bg:#f6f5f1; --card:#fff; --ink:#1d1c1a; --muted:#6b6963; --line:#e1dfd8; --accent:#1f6f5c; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#161614; --card:#1f1f1c; --ink:#ecebe6; --muted:#9a988f; --line:#33322e; --accent:#58b79e; } }
+  * { box-sizing: border-box } body { margin:0; font:15px/1.5 system-ui, sans-serif; background:var(--bg); color:var(--ink); }
+  main { max-width:760px; margin:0 auto; padding:20px 16px; display:flex; flex-direction:column; height:100vh; }
+  header { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
+  h1 { font-size:18px; margin:0 } select, input, button { font:inherit; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:8px; padding:8px 10px; }
+  #log { flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:10px; padding:4px 2px 12px; }
+  .msg { max-width:85%; padding:10px 12px; border-radius:12px; white-space:pre-wrap; overflow-wrap:anywhere; }
+  .user { align-self:flex-end; background:var(--accent); color:#fff; } .bot { align-self:flex-start; background:var(--card); border:1px solid var(--line); }
+  .tools { align-self:flex-start; font:12px ui-monospace, monospace; color:var(--muted); padding-left:4px; }
+  .blocked { color:#c2552d } form { display:flex; gap:8px } form input { flex:1; min-width:0 } button { background:var(--accent); color:#fff; border-color:var(--accent); cursor:pointer }
+  button:disabled { opacity:.5 } .hint { color:var(--muted); font-size:13px; margin:0 0 8px }
+</style></head>
+<body><main>
+  <header><h1>Sports store assistant</h1><label>Signed in as (demo) <select id="user"></select></label></header>
+  <p class="hint">Try: “waterproof shoes for trail running under $150” → “add the Trailblazer GTX, 42, Black/Lime” → “order it from the nearest store, express” → “yes, confirm”.</p>
+  <div id="log" aria-live="polite"></div>
+  <form id="f"><input id="q" placeholder="Ask about products, your cart or orders" autocomplete="off" required><button>Send</button></form>
+</main>
+<script>
+const $ = id => document.getElementById(id), log = $('log');
+function add(cls, text) { const d = document.createElement('div'); d.className = cls; d.textContent = text; log.appendChild(d); log.scrollTop = log.scrollHeight; return d; }
+fetch('/api/users').then(r => r.json()).then(us => us.forEach(u => $('user').add(new Option(u.name, u.email))));
+$('f').addEventListener('submit', async e => {
+  e.preventDefault();
+  const message = $('q').value.trim(); if (!message) return;
+  add('msg user', message); $('q').value = ''; const btn = e.target.querySelector('button'); btn.disabled = true;
+  try {
+    const r = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user: $('user').value, message }) });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.detail || r.statusText);
+    for (const t of data.tools) add('tools' + (t.blocked ? ' blocked' : ''), t.blocked ? `✋ ${t.name}: ${t.blocked}` : `⚙ ${t.name}(${JSON.stringify(t.args)})`);
+    add('msg bot', data.reply || '(no reply)');
+  } catch (err) { add('tools blocked', 'Request failed: ' + err.message); }
+  btn.disabled = false; $('q').focus();
+});
+</script></body></html>

@@ -1,0 +1,398 @@
+[
+ {
+  "name": "Northwind Freight",
+  "slug": "northwind-freight",
+  "industry": "logistics",
+  "hq": "Chicago, US",
+  "region": "North America",
+  "employees": 850,
+  "funding_stage": "Series C",
+  "tech_stack": [
+   "Snowflake",
+   "dbt",
+   "Python",
+   "AWS"
+  ],
+  "decision_roles": [
+   "VP Data & Analytics",
+   "Head of Supply Chain Technology"
+  ],
+  "signals": [
+   {
+    "type": "hiring",
+    "date": "2026-08-05",
+    "text": "Posted 6 data engineering roles including a Head of Data Platform",
+    "source": "corpus://northwind-freight#signal-1"
+   },
+   {
+    "type": "funding",
+    "date": "2026-09-21",
+    "text": "Raised a $60M Series C to modernise its routing platform",
+    "source": "corpus://northwind-freight#signal-2"
+   },
+   {
+    "type": "tech_change",
+    "date": "2026-06-03",
+    "text": "Migrating its warehouse from on-prem Oracle to Snowflake",
+    "source": "corpus://northwind-freight#signal-3"
+   }
+  ]
+ },
+ {
+  "name": "Harbor & Vine Foods",
+  "slug": "harbor-vine-foods",
+  "industry": "food distribution",
+  "hq": "Portland, US",
+  "region": "North America",
+  "employees": 420,
+  "funding_stage": "Private",
+  "tech_stack": [
+   "Excel",
+   "SQL Server",
+   "Power BI"
+  ],
+  "decision_roles": [
+   "VP Data & Analytics",
+   "Head of Supply Chain Technology"
+  ],
+  "signals": [
+   {
+    "type": "expansion",
+    "date": "2026-10-04",
+    "text": "Opening two new distribution centres in the Pacific Northwest",
+    "source": "corpus://harbor-vine-foods#signal-1"
+   },
+   {
+    "type": "hiring",
+    "date": "2026-08-19",
+    "text": "Hiring its first analytics manager",
+    "source": "corpus://harbor-vine-foods#signal-2"
+   }
+  ]
+ },
+ {
+  "name": "Lumen Ridge Health",
+  "slug": "lumen-ridge-health",
+  "industry": "healthcare",
+  "hq": "Austin, US",
+  "region": "North America",
+  "employees": 2300,
+  "funding_stage": "Series D",
+  "tech_stack": [
+   "Databricks",
+   "Python",
+   "Azure",
+   "Epic"
+  ],
+  "decision_roles": [
+   "Chief Data Officer",
+   "Director of Engineering"
+  ],
+  "signals": [
+   {
+    "type": "compliance",
+    "date": "2026-06-17",
+    "text": "Announced a HIPAA data-governance programme after an internal audit",
+    "source": "corpus://lumen-ridge-health#signal-1"
+   },
+   {
+    "type": "hiring",
+    "date": "2026-07-02",
+    "text": "Posted 4 ML engineer roles for patient-flow forecasting",
+    "source": "corpus://lumen-ridge-health#signal-2"
+   },
+   {
+    "type": "leadership",
+    "date": "2026-06-14",
+    "text": "Appointed a new Chief Data Officer",
+    "source": "corpus://lumen-ridge-health#signal-3"
+   }
+  ]
+ },
+ {
+  "name": "Brightpath Retail",
+  "slug": "brightpath-retail",
+  "industry": "retail",
+  "hq": "Toronto, CA",
+  "region": "North America",
+  "employees": 5100,
+  "funding_stage": "Public",
+  "tech_stack": [
+   "BigQuery",
+   "Looker",
+   "GCP",
+   "Python"
+  ],
+  "decision_roles": [
+   "VP Data & Analytics",
+   "Head of Supply Chain Technology"
+  ],
+  "signals": [
+   {
+    "type": "tech_change",
+    "date": "2026-09-03",
+    "text": "Evaluating real-time inventory analytics vendors",
+    "source": "corpus://brightpath-retail#signal-1"
+   },
+   {
+    "type": "leadership",
+    "date": "2026-07-03",
+    "text": "New VP of Supply Chain joined from a large grocer",
+    "source": "corpus://brightpath-retail#signal-2"
+   }
+  ]
+ },
+ {
+  "name": "Cobalt Yard Logistics",
+  "slug": "cobalt-yard-logistics",
+  "industry": "logistics",
+  "hq": "Rotterdam, NL",
+  "region": "Europe",
+  "employees": 1200,
+  "funding_stage": "Series B",
+  "tech_stack": [
+   "Kafka",
+   "Postgres",
+   "Java",
+   "AWS"
+  ],
+  "decision_roles": [
+   "VP Data & Analytics",
+   "Head of Supply Chain Technology"
+  ],
+  "signals": [
+   {
+    "type": "funding",
+    "date": "2026-10-14",
+    "text": "Closed a \u20ac35M Series B",
+    "source": "corpus://cobalt-yard-logistics#signal-1"
+   },
+   {
+    "type": "hiring",
+    "date": "2026-06-27",
+    "text": "Hiring 9 backend and data engineers",
+    "source": "corpus://cobalt-yard-logistics#signal-2"
+   },
+   {
+    "type": "expansion",
+    "date": "2026-10-04",
+    "text": "Launching cross-border trucking in DACH",
+    "source": "corpus://cobalt-yard-logistics#signal-3"
+   }
+  ]
+ },
+ {
+  "name": "Fernhill Insurance",
+  "slug": "fernhill-insurance",
+  "industry": "insurance",
+  "hq": "Hartford, US",
+  "region": "North America",
+  "employees": 3900,
+  "funding_stage": "Public",
+  "tech_stack": [
+   "SAS",
+   "Oracle",
+   "Mainframe"
+  ],
+  "decision_roles": [
+   "Chief Data Officer",
+   "Director of Engineering"
+  ],
+  "signals": [
+   {
+    "type": "compliance",
+    "date": "2026-07-21",
+    "text": "Preparing for new state AI-underwriting disclosure rules",
+    "source": "corpus://fernhill-insurance#signal-1"
+   }
+  ]
+ },
+ {
+  "name": "Quillon Robotics",
+  "slug": "quillon-robotics",
+  "industry": "manufacturing",
+  "hq": "Munich, DE",
+  "region": "Europe",
+  "employees": 640,
+  "funding_stage": "Series B",
+  "tech_stack": [
+   "ROS",
+   "C++",
+   "Azure",
+   "Python"
+  ],
+  "decision_roles": [
+   "Chief Data Officer",
+   "Director of Engineering"
+  ],
+  "signals": [
+   {
+    "type": "funding",
+    "date": "2026-10-02",
+    "text": "Raised \u20ac40M to scale warehouse robots",
+    "source": "corpus://quillon-robotics#signal-1"
+   },
+   {
+    "type": "hiring",
+    "date": "2026-10-19",
+    "text": "Posted 3 data platform roles",
+    "source": "corpus://quillon-robotics#signal-2"
+   }
+  ]
+ },
+ {
+  "name": "Tidewater Cold Chain",
+  "slug": "tidewater-cold-chain",
+  "industry": "logistics",
+  "hq": "Savannah, US",
+  "region": "North America",
+  "employees": 310,
+  "funding_stage": "Series A",
+  "tech_stack": [
+   "Postgres",
+   "Python",
+   "AWS",
+   "Airflow"
+  ],
+  "decision_roles": [
+   "VP Data & Analytics",
+   "Head of Supply Chain Technology"
+  ],
+  "signals": [
+   {
+    "type": "hiring",
+    "date": "2026-09-02",
+    "text": "Hiring a first data engineer and an analytics lead",
+    "source": "corpus://tidewater-cold-chain#signal-1"
+   },
+   {
+    "type": "tech_change",
+    "date": "2026-07-02",
+    "text": "Issued an RFP for shipment-visibility and ETA prediction",
+    "source": "corpus://tidewater-cold-chain#signal-2"
+   },
+   {
+    "type": "funding",
+    "date": "2026-10-28",
+    "text": "Raised an $18M Series A",
+    "source": "corpus://tidewater-cold-chain#signal-3"
+   }
+  ]
+ },
+ {
+  "name": "Maple & Main Bank",
+  "slug": "maple-main-bank",
+  "industry": "banking",
+  "hq": "Columbus, US",
+  "region": "North America",
+  "employees": 7800,
+  "funding_stage": "Public",
+  "tech_stack": [
+   "Teradata",
+   "Java",
+   "Mainframe"
+  ],
+  "decision_roles": [
+   "Chief Data Officer",
+   "Director of Engineering"
+  ],
+  "signals": [
+   {
+    "type": "leadership",
+    "date": "2026-07-10",
+    "text": "New CIO announced a three-year cloud migration",
+    "source": "corpus://maple-main-bank#signal-1"
+   }
+  ]
+ },
+ {
+  "name": "Skylark Parcel",
+  "slug": "skylark-parcel",
+  "industry": "logistics",
+  "hq": "Dallas, US",
+  "region": "North America",
+  "employees": 1650,
+  "funding_stage": "Series C",
+  "tech_stack": [
+   "Snowflake",
+   "Python",
+   "Airflow",
+   "GCP"
+  ],
+  "decision_roles": [
+   "VP Data & Analytics",
+   "Head of Supply Chain Technology"
+  ],
+  "signals": [
+   {
+    "type": "expansion",
+    "date": "2026-09-05",
+    "text": "Adding same-day delivery in 12 metros",
+    "source": "corpus://skylark-parcel#signal-1"
+   },
+   {
+    "type": "hiring",
+    "date": "2026-10-04",
+    "text": "Posted 5 ML roles for dynamic routing",
+    "source": "corpus://skylark-parcel#signal-2"
+   },
+   {
+    "type": "tech_change",
+    "date": "2026-10-10",
+    "text": "Replacing a home-grown dispatch system",
+    "source": "corpus://skylark-parcel#signal-3"
+   }
+  ]
+ },
+ {
+  "name": "Orchard Lane Software",
+  "slug": "orchard-lane-software",
+  "industry": "software",
+  "hq": "Denver, US",
+  "region": "North America",
+  "employees": 140,
+  "funding_stage": "Seed",
+  "tech_stack": [
+   "TypeScript",
+   "Postgres",
+   "Vercel"
+  ],
+  "decision_roles": [
+   "Chief Data Officer",
+   "Director of Engineering"
+  ],
+  "signals": [
+   {
+    "type": "funding",
+    "date": "2026-10-27",
+    "text": "Raised a $4M seed round",
+    "source": "corpus://orchard-lane-software#signal-1"
+   }
+  ]
+ },
+ {
+  "name": "Granite Peak Freight",
+  "slug": "granite-peak-freight",
+  "industry": "logistics",
+  "hq": "Calgary, CA",
+  "region": "North America",
+  "employees": 95,
+  "funding_stage": "Private",
+  "tech_stack": [
+   "Excel",
+   "QuickBooks"
+  ],
+  "decision_roles": [
+   "VP Data & Analytics",
+   "Head of Supply Chain Technology"
+  ],
+  "signals": [
+   {
+    "type": "expansion",
+    "date": "2026-07-04",
+    "text": "Bought 20 additional trucks",
+    "source": "corpus://granite-peak-freight#signal-1"
+   }
+  ]
+ }
+]

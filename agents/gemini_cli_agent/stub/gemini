@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+"""STUB of the Gemini CLI for offline tests — NOT the real `gemini` binary and not a model.
+It accepts `gemini -p "<task>"` like the real CLI and prints a deterministic answer built by actually scanning the
+current directory, so the ADK tool's subprocess handling (cwd, argv, timeout, exit codes, output caps) is exercised for real."""
+import ast
+import pathlib
+import sys
+import time
+
+args = sys.argv[1:]
+task = args[args.index("-p") + 1] if "-p" in args else ""
+if "sleep-forever" in task:
+    time.sleep(60)
+if "fail-now" in task:
+    print("stub: simulated failure", file=sys.stderr)
+    sys.exit(3)
+files = sorted(p for p in pathlib.Path(".").rglob("*.py") if ".git" not in p.parts)
+defs = []
+for f in files:
+    for node in ast.walk(ast.parse(f.read_text())):
+        if isinstance(node, (ast.FunctionDef, ast.ClassDef)):
+            defs.append(f"{f}:{node.lineno} {type(node).__name__.replace('Def', '').lower()} {node.name}")
+tests = [f for f in files if f.name.startswith("test_")]
+print(f"[gemini-cli stub] task: {task}")
+print(f"Scanned {len(files)} Python file(s) in {pathlib.Path('.').resolve().name}; {len(tests)} test file(s).")
+print("Definitions:\n" + "\n".join("  " + d for d in defs))

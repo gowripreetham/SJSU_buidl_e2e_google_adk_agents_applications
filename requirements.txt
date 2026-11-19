@@ -1,0 +1,6 @@
+google-adk>=2.14
+mcp
+fastapi
+uvicorn
+httpx
+pytest
